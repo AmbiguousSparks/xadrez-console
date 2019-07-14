@@ -8,24 +8,42 @@ namespace xadrez_console
     {
         public static void ImprimirTabuleiro ( Tabuleiro tab )
         {
-            StringBuilder sb = new StringBuilder();
             for (int i = 0; i < tab.Linhas; i++)
             {
+                Console.Write(8 - i);
+                Console.Write(" ");
                 for (int j = 0; j < tab.Colunas; j++)
                 {
                     if (tab.Peca(i, j) == null)
                     {
-                        sb.Append("- ");
+                        Console.Write("- ");
                     }
                     else
                     {
-                        sb.Append(tab.Peca(i, j));
-                        sb.Append(" ");
+                        ImprimirPeca(tab.Peca(i, j));
                     }
                 }
-                sb.AppendLine("");
+                Console.WriteLine();
             }
-            Console.WriteLine(sb);
+            Console.WriteLine("  a b c d e f g h");
         }
+
+        public static void ImprimirPeca ( Peca peca )
+        {
+            if (peca.Cor == Cor.Branca)
+            {
+                Console.Write(peca);
+                Console.Write(" ");
+            }
+            else
+            {
+                ConsoleColor aux = Console.ForegroundColor;
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Write(peca);
+                Console.Write(" ");
+                Console.ForegroundColor = aux;                
+            }
+        }
+
     }
 }
