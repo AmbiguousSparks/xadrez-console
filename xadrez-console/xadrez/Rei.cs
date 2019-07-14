@@ -6,7 +6,7 @@ namespace xadrez
     {
         public Rei ( Cor cor, Tabuleiro tab )
             : base(cor, tab)
-        {}
+        { }
 
         public override string ToString ()
         {
