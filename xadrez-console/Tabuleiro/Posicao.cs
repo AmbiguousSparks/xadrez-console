@@ -23,5 +23,11 @@ namespace tabuleiro
 
             return sb.ToString();
         }
+
+        public void DefinirValores ( int linha, int coluna )
+        {
+            Linha = linha;
+            Coluna = coluna;
+        }
     }
 }
