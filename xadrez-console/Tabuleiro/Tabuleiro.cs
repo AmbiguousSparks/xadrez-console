@@ -33,7 +33,7 @@
         {
             if (ExistePeca(pos))
             {
-                throw new TabuleiroException("Já existe uma peça na posição " + pos );
+                throw new TabuleiroException("Já existe uma peça na posição ");
             }
             Pecas[pos.Linha, pos.Coluna] = p;
             p.Posicao = pos;

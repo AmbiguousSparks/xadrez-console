@@ -16,7 +16,7 @@ namespace xadrez_console
                 Console.Write(" ");
                 for (int j = 0; j < tab.Colunas; j++)
                 {
-                    ImprimirPeca(tab.Peca(i, j));   
+                    ImprimirPeca(tab.Peca(i, j));
                 }
                 Console.WriteLine();
             }
@@ -80,7 +80,7 @@ namespace xadrez_console
                 }
                 Console.Write(" ");
             }
-            
+
         }
 
         public static void ImprimirPartida ( PartidaDeXadrez partida )
@@ -88,10 +88,21 @@ namespace xadrez_console
             ImprimirTabuleiro(partida._tab);
             Console.WriteLine();
             ImprimirPecasCapturadas(partida);
-            Console.WriteLine("\nTurno: {0}\nAguardando jogada: {1}", partida._turno, partida._jogadorAtual);
-            if(partida.Xeque){
-                Console.WriteLine("XEQUE!");
+
+            if (!partida.Terminada)
+            {
+                Console.WriteLine("\nTurno: {0}\nAguardando jogada: {1}", partida._turno, partida._jogadorAtual);
+                if (partida.Xeque)
+                {
+                    Console.WriteLine("XEQUE!");
+                }
             }
+            else
+            {
+                Console.WriteLine("XEQUEMATE");
+                Console.WriteLine("Vencedor: {0}", partida._jogadorAtual);
+            }
+
         }
 
         private static void ImprimirPecasCapturadas ( PartidaDeXadrez partida )
