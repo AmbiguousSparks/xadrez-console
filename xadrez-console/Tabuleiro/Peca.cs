@@ -43,5 +43,10 @@
             return MovimentosPossiveis()[pos.Linha, pos.Coluna];
         }
         public abstract bool[,] MovimentosPossiveis ();
+
+        internal void DecrementarQtdMovimentos ()
+        {
+            QtdMovimentos--;
+        }
     }
 }
